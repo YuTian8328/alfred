@@ -1,3 +1,5 @@
+werkzeug==2.0.3
+flask==2.0.3
 numpy
 pandas
 opencv-python
@@ -11,4 +13,4 @@ Pillow
 torch
 torchvision
 tensorboardX
-ai2thor==4.0.0
+ai2thor==2.1.0

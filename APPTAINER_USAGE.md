@@ -11,13 +11,6 @@ $ sbatch build_apptainer.slurm
 ```
 Different from docker image, in the context of Apptainer, a container essentially is a `.sif` file.
 
-## Install extra packages needed for the project.
-```bash
-$ EXTRA_PKGS='scipy imageio'
-$ singularity exec \
-  ai2thor-Xvfb.sif bash -c "python3 -m venv --system-site-packages ./myenv ; source ./myenv/bin/activate ; pip install $EXTRA_PKGS"
- ```
-
 ## Run (Headless)
 Request an interactive shell on a gpu node:
 ```bash
@@ -30,6 +23,10 @@ Start an interactive session in the container:
 $ apptainer exec --nv ai2thor-Xvfb.sif bash
 
 # inside the container
+ # create a virtual env and install packages needed for the project
+  python3 -m venv --system-site-packages ./myenv
+  source ./myenv/bin/activate 
+  pip install -r requirements.txt
 
   # start a new tmux session
   tmux new -s startx
@@ -54,9 +51,6 @@ $ apptainer exec --nv ai2thor-Xvfb.sif bash
   vncviewer node_name:5999
 
   # back to the terminal (still inside the container)
-  # active your own python env if needed
-  source ./myenv/bin/activate
-
   # test thor
   python3 scripts/check_thor.py
 
