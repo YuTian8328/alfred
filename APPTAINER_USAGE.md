@@ -22,7 +22,9 @@ Start an interactive session in the container:
 $ apptainer exec --nv ai2thor-Xvfb.sif bash
 
 # inside the container
- # create a virtual env and install packages needed for the project
+ # create a virtual environment and install packages needed for the project
+ # by default, apptainer will bind the present working folder (along with some system folders) to the container,
+ # so this environment is writable and accessible both inside and outside the container
   python3 -m venv --system-site-packages ./myenv
   source ./myenv/bin/activate 
   pip install -r requirements.txt
