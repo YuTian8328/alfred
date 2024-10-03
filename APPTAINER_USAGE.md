@@ -36,7 +36,8 @@ $ apptainer exec --nv ai2thor-Xvfb.sif
   # detach from tmux shell
   # Ctrl+b then d
 
-  # start a new tmux session and a server to stream the display if you want to forward the virtual screen to triton desktop to see the real screen, otherwise skip this step and the next step
+  # start a new tmux session and a server to stream the display if you want to forward the virtual screen 
+  to triton desktop to see the real screen, otherwise skip this step and the next step
   tmux new-session -d -s vnc_session
 
   x11vnc -display :0 -forever -rfbport 5999
@@ -46,12 +47,12 @@ $ apptainer exec --nv ai2thor-Xvfb.sif
 
 # open a shell in triton desktop https://ondemand.triton.aalto.fi/ to see the real screen
 vncviewer node_name:5999
+  # back to the terminal (still inside the container)
+  # active your own python env if needed
+  source ./myenv/bin/activate
 
-# active your own python env if needed
-source ./myenv/bin/activate
-
-# test thor
-python3 script/check_thor.py
+  # test thor
+  python3 script/check_thor.py
 
 ############
 # Initialized AI2-THOR successfully
