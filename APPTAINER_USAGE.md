@@ -20,7 +20,9 @@ $ singularity exec \
 
 ## Run (Headless)
 Request an interactive shell on a gpu node:
-```srun --gpus=1 --mem=40G --pty bash```
+```bash
+$ srun --gpus=1 --mem=40G --pty bash
+```
 NOTE: request enough memory, otherwise the python script may hang without any error message.
 
 Start an interactive session in the container:
