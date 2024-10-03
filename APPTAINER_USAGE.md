@@ -15,7 +15,7 @@ Different from docker image, in the context of Apptainer, a container essentiall
 ```bash
 $ EXTRA_PKGS='scipy imageio'
 $ singularity exec \
-  ai2thor-Xvfb.sif bash -c "python -m venv --system-site-packages ./myenv ; source ./myenv/bin/activate ; pip install $EXTRA_PKGS"
+  ai2thor-Xvfb.sif bash -c "python3 -m venv --system-site-packages ./myenv ; source ./myenv/bin/activate ; pip install $EXTRA_PKGS"
  ```
 
 ## Run (Headless)
