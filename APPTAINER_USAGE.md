@@ -27,7 +27,7 @@ NOTE: request enough memory, otherwise the python script may hang without any er
 
 Start an interactive session in the container:
 ```bash
-$ apptainer exec --nv ai2thor-Xvfb.sif
+$ apptainer exec --nv ai2thor-Xvfb.sif bash
 
 # inside the container
 
