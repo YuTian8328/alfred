@@ -58,7 +58,7 @@ $ apptainer exec --nv ai2thor-Xvfb.sif bash
   source ./myenv/bin/activate
 
   # test thor
-  python3 script/check_thor.py
+  python3 scripts/check_thor.py
 
 ############
 # Initialized AI2-THOR successfully
