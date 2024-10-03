@@ -3,13 +3,13 @@
 ## Preparation:
 - Modify requirements to use new versions of torch and ai2thor.
 - Modify the test script `script/check_thor.py`
-- Create a `.def` file (equivalant to Dockerfile in the Docker context)
+- Create an Apptainer`.def` file (equivalent to Dockerfile in the Docker context) to define the environment, which will be used to generate a .sif container file.
 
-## Build the Apptainer container, run:
+## Submit the build_apptainer.slurm job script to build the container image:
 ```bash
 $ sbatch build_apptainer.slurm
 ```
-Different from docker image, in the context of Apptainer, a container essentially is a `.sif` file
+Different from docker image, in the context of Apptainer, a container essentially is a `.sif` file.
 
 ## Install extra packages needed for the project.
 ```bash
@@ -19,17 +19,18 @@ $ singularity exec \
  ```
 
 ## Run (Headless)
-Get an interactive shell on a gpu node:
+Request an interactive shell on a gpu node:
 ```srun --gpus=1 --mem=40G --pty bash
  ```
+NOTE: request enough memory, otherwise the python script may hang without any error message.
 
 Start an interactive session in the container:
 ```bash
-$ apptainer exec --nv ai2thor-Xvfb.sif 
+$ apptainer exec --nv ai2thor-Xvfb.sif
 # inside the container
-  tmux new -s startx  # start a new tmux session
-
-  # start X server on DISPLAY 0
+  # start a new tmux session
+  tmux new -s startx  
+  # start X11 server on DISPLAY 0
   Xvfb :0 -screen 0 1280x1024x24 &
 
   # detach from tmux shell
@@ -37,7 +38,7 @@ $ apptainer exec --nv ai2thor-Xvfb.sif
 
   # start a new tmux session and a server to stream the display if you want to forward the virtual screen to triton desktop to see the real screen, otherwise skip this step and the next step
   tmux new-session -d -s vnc_session
-  
+
   x11vnc -display :0 -forever -rfbport 5999
 
   # detach from tmux shell
