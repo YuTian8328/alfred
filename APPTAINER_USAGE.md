@@ -1,4 +1,4 @@
-# Adaption for Triton environment
+# Adaptation for Triton environment
 
 ## Preparation:
 - Modify requirements to use new versions of torch and ai2thor.
