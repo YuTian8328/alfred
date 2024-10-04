@@ -44,7 +44,7 @@ $ apptainer exec --nv ai2thor-Xvfb.sif bash
   # start a new tmux session and a server to stream the display if you want to forward the virtual screen 
   # to triton desktop to see the real screen, otherwise skip this step and the next step
 
-  tmux new-session -d -s vnc_session
+  tmux new-session -s vnc_session
 
   x11vnc -display :0 -forever -rfbport 5999
 
