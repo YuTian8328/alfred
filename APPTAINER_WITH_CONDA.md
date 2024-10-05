@@ -24,19 +24,23 @@ Mamaba was installed in the container, it is a fast drop-in replacement for Cond
 After the environment created, request an interactive shell on a gpu node:
 ```bash
   srun --gpus=1 --mem=40G --pty bash
+```
 
 # NOTE: request enough memory, otherwise the python script may hang without any error message!!
 # Start an interactive session in the container
+```bash
   apptainer exec --nv mamba-Xvfb.sif bash
-
+```
 # inside the container
 
   # start a new tmux session
+```bash
   tmux new -s startx
-
+```
   # start X11 server on DISPLAY 0
+```bash
   Xvfb :0 -screen 0 1280x1024x24 &
-
+```
   # detach from tmux shell
   # Ctrl+b then d
 
