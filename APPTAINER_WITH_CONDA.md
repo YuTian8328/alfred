@@ -41,8 +41,7 @@ After the environment created, request an interactive shell on a gpu node:
 ```bash
   Xvfb :0 -screen 0 1280x1024x24 &
 ```
-  #### detach from tmux shell
-  #### Ctrl+b then d
+  #### detach from tmux shell with Ctrl+b then d
 
   #### verify the display is on, you are supposed to see two processes, one is for display 0
 ```bash
@@ -54,19 +53,21 @@ After the environment created, request an interactive shell on a gpu node:
   tmux new-session -s vnc_session
   x11vnc -display :0 -forever -rfbport 5999
 ```
-  #### detach from tmux shell
-  #### Ctrl+b then d
+  #### detach from tmux shell with Ctrl+b then d
 
-  # open a shell in triton desktop https://ondemand.triton.aalto.fi/ to see the real screen
+  #### open a shell in triton desktop https://ondemand.triton.aalto.fi/ to see the real screen
+```bash
   vncviewer node_name:5999
-
-# back to the previous terminal (still inside the container)
-  # Active the virtual conda environment
+```
+### back to the previous terminal (still inside the container)
+  #### Active the virtual conda environment
+```bash
   conda activate ./myenv
-
-  # test thor
+```
+  #### test thor
+```bash  
   python3 scripts/check_thor.py
-
+```
 ############
 # Initialized AI2-THOR successfully
 # (300, 300, 3)
