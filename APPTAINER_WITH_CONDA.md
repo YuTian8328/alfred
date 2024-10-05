@@ -68,7 +68,6 @@ After the environment created, request an interactive shell on a gpu node:
 ```bash  
   python3 scripts/check_thor.py
 ```
-############
 **Expected output**
 ```bash 
 # Initialized AI2-THOR successfully
