@@ -40,8 +40,9 @@ After the environment created, request an interactive shell on a gpu node:
   #### start X11 server on DISPLAY 0
 ```bash
   Xvfb :0 -screen 0 1280x1024x24 &
+  # detach from tmux shell with Ctrl+b then d
 ```
-  #### detach from tmux shell with Ctrl+b then d
+  
 
   #### verify the display is on, you are supposed to see two processes, one is for display 0
 ```bash
@@ -52,9 +53,8 @@ After the environment created, request an interactive shell on a gpu node:
 ```bash
   tmux new-session -s vnc_session
   x11vnc -display :0 -forever -rfbport 5999
+  # detach from tmux shell with Ctrl+b then d
 ```
-  #### detach from tmux shell with Ctrl+b then d
-
   #### open a shell in triton desktop https://ondemand.triton.aalto.fi/ to see the real screen
 ```bash
   vncviewer node_name:5999
