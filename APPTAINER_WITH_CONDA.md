@@ -69,8 +69,9 @@ After the environment created, request an interactive shell on a gpu node:
   python3 scripts/check_thor.py
 ```
 ############
-# Initialized AI2-THOR successfully
-# (300, 300, 3)
-# Everything works!!!
-# GPU available: True
-```
+**Expected output**
+Initialized AI2-THOR successfully
+(300, 300, 3)
+Everything works!!!
+GPU available: True
+
