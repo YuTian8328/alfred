@@ -4,7 +4,7 @@
 - Modify the test script `scripts/check_thor.py`
 - Create an Apptainer`.def` file (equivalent to Dockerfile in the Docker context) to define the environment, which will be used to generate a .sif container file.
 
-## Submit the build_apptainer.slurm job script to build the container image:
+## Submit the job script to build the container image:
 ```bash
 $ sbatch build_conda_apptainer.slurm
 ```
