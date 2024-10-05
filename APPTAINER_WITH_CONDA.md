@@ -70,8 +70,9 @@ After the environment created, request an interactive shell on a gpu node:
 ```
 ############
 **Expected output**
-Initialized AI2-THOR successfully
-(300, 300, 3)
-Everything works!!!
-GPU available: True
-
+```bash 
+# Initialized AI2-THOR successfully
+# (300, 300, 3)
+# Everything works!!!
+# GPU available: True
+```
