@@ -1,0 +1,25 @@
+name: my_env
+channels:
+  - nvidia
+  - pytorch
+  - conda-forge
+dependencies:
+  - numpy
+  - pandas
+  - opencv
+  - networkx
+  - h5py
+  - tqdm
+  - pillow
+  - setuptools
+  - pytorch-cuda=11.8
+  - pytorch
+  - torchvision
+  - tensorboardx
+  - revtok
+  - werkzeug=2.0.3
+  - flask=2.0.3
+  - pip
+  - pip:
+      - vocab
+      - ai2thor==2.1.0
