@@ -6,7 +6,7 @@
 
 ## Submit the build_apptainer.slurm job script to build the container image:
 ```bash
-$ sbatch build_mamba_apptainer.slurm
+$ sbatch build_conda_apptainer.slurm
 ```
 Different from docker image, in the context of Apptainer, a container essentially is a `.sif` file.
 
