@@ -55,16 +55,15 @@ From: nvidia/cuda:12.2.2-cudnn8-devel-ubuntu22.04
     # Run the installer in silent mode (no user prompts)
     bash Miniforge3-$(uname)-$(uname -m).sh -b -p /opt/miniforge
 
-    # Add conda to the path
-   # echo "export PATH=/opt/miniforge/bin:\$PATH" >> /etc/profile
+    # Clean up installer to save space
+    rm Miniforge3-$(uname)-$(uname -m).sh
 
     # Install mamba (you could also install other packages you need here)
-    /opt/miniforge/bin/conda install mamba -n base -c conda-forge
+    /opt/miniforge/bin/conda install -n base -c conda-forge mamba -y
 
 
-    # Install Python requirements
+    # Update pip
     pip install --upgrade pip
-   # pip install -U setuptools
 
 %environment
     # Set environment variables for the runtime

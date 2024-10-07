@@ -61,7 +61,7 @@ After the environment created, request an interactive shell on a gpu node:
 ### back to the previous terminal (still inside the container)
   #### Active the virtual conda environment
 ```bash
-  conda activate ./myenv
+  source activate ./myenv
 ```
   #### test thor
 ```bash  
