@@ -23,10 +23,10 @@ Mamaba was installed in the container, it is a fast drop-in replacement for Cond
 ## Run (Headless)
 After the environment created, request an interactive shell on a gpu node:
 ```bash
-  srun --gpus=1 --mem=40G --pty bash
+  srun --gpus=1 --cpus-per-gpu=8 --mem=40G --pty bash
 ```
 
-### NOTE: request enough memory, otherwise the python script may hang without any error message!!
+### NOTE: request enough memory, otherwise the python script may hang without any error message!! Besides, multiple cpu cores can accelerate the rendering.
 #### Start an interactive session in the container
 ```bash
   apptainer exec --nv mamba-Xvfb.sif bash
@@ -43,7 +43,6 @@ After the environment created, request an interactive shell on a gpu node:
   # detach from tmux shell with Ctrl+b then d
 ```
   
-
   #### verify the display is on, you are supposed to see two processes, one is for display 0
 ```bash
   ps aux | grep Xvfb
