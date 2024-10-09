@@ -15,7 +15,7 @@ Request an interactive shell on a gpu node:
 ```bash
 $ srun --gpus=1 --mem=40G --pty bash
 ```
-NOTE: request enough memory, otherwise the python script may hang without any error message.
+NOTE: request enough memory, otherwise the python script may hang without any error message!! Besides, multiple cpu cores can accelerate the rendering.
 
 Start an interactive session in the container:
 ```bash
