@@ -1,5 +1,5 @@
-# Adaptation for Triton environment
-To use Alfred on Triton, we created a container.
+# Adaptation for Triton Environment
+To use Alfred on Triton, we created a apptainer container.
 This container is built on top of the nvidia/cuda:12.2.2-cudnn8-devel-ubuntu22.04 image and is designed to provide an environment for GPU-accelerated computing with support for headless rendering. The container includes the following key features and tools:
 - VirtualGL: VirtualGL is installed to provide the capability for GPU-accelerated remote rendering. This is useful for applications requiring high-performance OpenGL rendering in a virtualized environment.
 
@@ -25,7 +25,7 @@ Different from docker image, in the context of Apptainer, a container image esse
 
 In the root directory of the project, where `Vgl-Egl-Xvfb.sif` is, run
 ```bash
-$ apptainer exec --bind $WRKDIR/.conda_pkgs,$WRKDIR/.conda_envs mamba-Xvfb.sif \
+$ apptainer exec --bind $WRKDIR/.conda_pkgs,$WRKDIR/.conda_envs Vgl-Egl-Xvfb.sif \
   bash -c "mamba env create -p ./myenv -f environment.yml"
 ```
 Mamaba was installed in the container, it is a fast drop-in replacement for Conda, with the same command structure. Remember to bind the .conda_pkgs and .conda_envs folders (assume that you have modified your conda config according to [Triton's docs](https://scicomp.aalto.fi/triton/apps/python-conda/#quick-usage-guide])).
