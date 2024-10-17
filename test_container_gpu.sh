@@ -8,8 +8,5 @@ sleep 2
 # Activate the environment
 source activate ./myenv
 
-# Disable GPU rendering
-# unset LIBGL_ALWAYS_INDIRECT
-
-# Run the Python script
+# Run the Python script with vglrun
 vglrun python3 verify-gpu-rendering.py
