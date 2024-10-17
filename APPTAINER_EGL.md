@@ -28,7 +28,7 @@ In the root directory of the project, where `Vgl-Egl-Xvfb.sif` is, run
 $ apptainer exec --bind $WRKDIR/.conda_pkgs,$WRKDIR/.conda_envs Vgl-Egl-Xvfb.sif \
   bash -c "mamba env create -p ./myenv -f environment.yml"
 ```
-Mamaba was installed in the container, it is a fast drop-in replacement for Conda, with the same command structure. Remember to bind the .conda_pkgs and .conda_envs folders (assume that you have modified your conda config according to [Triton's docs](https://scicomp.aalto.fi/triton/apps/python-conda/#quick-usage-guide])).
+Remember to bind the .conda_pkgs and .conda_envs folders (assume that you have modified your conda config according to [Triton's docs](https://scicomp.aalto.fi/triton/apps/python-conda/#quick-usage-guide])).
   With the `-p` flag, mamba will create an environment in the specified path, which, in the commnad above, is ./myenv in the present folder.
 
 ## Test the container
