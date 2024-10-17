@@ -1,3 +1,5 @@
+### This will be removed, please use Vgl-Egl-Xvfb.def instead.
+
 Bootstrap: docker
 From: nvidia/cuda:12.2.2-cudnn8-devel-ubuntu22.04
 
