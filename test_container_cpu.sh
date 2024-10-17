@@ -7,6 +7,7 @@ sleep 2
 
 # Activate the environment
 source activate ./myenv
+
 # Use more threads for rendering
 LP_NUM_THREADS=4
 
